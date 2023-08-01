@@ -1,0 +1,76 @@
+.board {
+  position: relative;
+  display: flex;
+  /* flex-direction: column; */
+}
+
+.rank {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: 20px;
+  font-size: 15px;
+  color: white;
+}
+
+.file {
+  position: absolute;
+  bottom: -30px;
+  right: -10px;
+}
+
+.file span {
+  margin: 30px;
+  color: white;
+}
+
+.files {
+  display: grid;
+  grid-template-columns: repeat(8, 68px);
+  grid-template-rows: repeat(8, 68px);
+
+  width: calc(8*68px);
+}
+
+.tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid white; */
+}
+
+.tile-light {
+  background-color: burlywood;
+  /* background-color: yellow; */
+  /* background-color: white; */
+  /* background-color: orange; */
+}
+
+.tile-dark {
+  background-color: chocolate;
+
+  /* background-color: darkblue; */
+  /* background-color: black; */
+  /* background-color: gray; */
+
+}
+
+.attacking::after {
+
+  content: '';
+  /* position: absolute; */
+  /* background-color: red; */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 5px solid rgba(0, 0, 0, 0.2);
+}
+
+.highlight::after {
+
+  content: '';
+  background-color: rgba(0, 0, 0, .1);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}

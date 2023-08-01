@@ -1,0 +1,135 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+  height: 100vh;
+  background: black;
+}
+
+.app {
+
+  width: 570px;
+  height: 570px;
+  display: flex;
+  padding: 2px;
+  /* background-repeat: no-repeat; */
+  flex-wrap: wrap;
+  border: 5px solid white;
+
+}
+
+.elem_white {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12.5%;
+  height: 12.5%;
+  background: white;
+  /* border: 1px solid black; */
+}
+
+.elem_black {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12.5%;
+  height: 12.5%;
+  background: black;
+  /* border: 1px solid white; */
+
+}
+
+.shess {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12.5%;
+  height: 12.5%;
+  background: black;
+}
+
+.figure_white {
+  font-size: 50px;
+  cursor: grab;
+
+}
+
+.figure_black {
+  font-size: 50px;
+  cursor: grab;
+
+
+  /* font-weight: 900; */
+  /* cursor: pointer; */
+}
+
+.elem_black .shess:hover {
+  cursor: grab;
+}
+
+.elem_black .shess:active {
+  cursor: grabbing;
+}
+
+.elem_white .shess:hover {
+  cursor: grab;
+}
+
+.elem_white .shess:active {
+  cursor: grabbing;
+}
+
+.num {
+  margin-top: 35px;
+}
+
+.num li {
+  list-style: none;
+  color: white;
+  height: 70px;
+  padding: 10px;
+
+}
+
+.word {
+  position: absolute;
+  top: 35px;
+  display: flex;
+  color: white;
+  margin-left: 30px;
+}
+
+.word li {
+
+  list-style: none;
+  width: 70px;
+
+}
+
+@media (max-width:500px) {
+
+
+  .app {
+    width: 350px;
+    height: 350px;
+  }
+
+  .num {
+    display: none;
+  }
+
+  .word {
+    display: none;
+  }
+
+  .figure_black {
+    font-size: 30px;
+  }
+
+  .figure_white {
+    font-size: 30px;
+  }
+}
