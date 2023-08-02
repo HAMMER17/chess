@@ -13,10 +13,14 @@ const arbiter = {
     if (piece.endsWith('k'))
       return getMoveKing({ position, file, rank, piece })
     if (piece.endsWith('p'))
-      return [
-        ...getMovePawn({ position, file, rank, piece }),
-        ...getPawnCaptures({ position, file, rank, piece })
-      ]
+      return getMovePawn({ position, file, rank, piece })
+  },
+  getMoveValid: function ({ position, file, rank, piece, prevPosition }) {
+    let moves = this.getRegularMove({ position, file, rank, piece })
+    if (piece.endsWith('p')) {
+      moves = [...moves, ...getPawnCaptures({ position, file, rank, piece, prevPosition })]
+    }
+    return moves;
   }
 
 }

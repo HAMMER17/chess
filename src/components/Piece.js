@@ -7,15 +7,16 @@ const Piece = ({ piece, rank, file }) => {
   const { appState, dispatch } = useAppContext()
   const { turn, position } = appState
   const currentPosition = position[position.length - 1]
+  const prevPosition = position[position.length - 2]
 
   const onDragStart = (e) => {
     e.dataTransfer.effectAllowed = 'move';
-    e.dataTransfer.setData('text', `${piece},${rank},${file}`)
+    e.dataTransfer.setData('text/plain', `${piece},${rank},${file}`)
     setTimeout(() => {
       e.target.style.display = 'none'
     }, 100)
     if (turn === piece[0]) {
-      const candidateMove = arbiter.getRegularMove({ position: currentPosition, piece, rank, file })
+      const candidateMove = arbiter.getMoveValid({ position: currentPosition, piece, rank, file, prevPosition })
       dispatch(generateCandidateMove({ candidateMove }))
 
     }
